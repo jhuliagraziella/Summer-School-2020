@@ -1,0 +1,22 @@
+// Link pro contest: https://codeforces.com/gym/102428
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main () {
+  cin.tie(0); ios::sync_with_stdio(false);
+  int n, x;
+  cin >> n >> x;
+
+  int v[1000];
+  int ans = 1;
+  int cur = 0;
+  for (int i = 0; i < n; i++) {
+    cin >> v[i];
+    if (v[i] - v[i-1] > x) cur = 0;
+    cur++;
+    ans = max(ans, cur);
+  }
+  cout << ans << endl;
+}
